@@ -2,10 +2,6 @@
 
 Here we provide a boilerplate for angular projects.
 
-# Domains
-
-Live: http://www.sample.ch
-
 ## Prerequisites
 
 * [nodejs](https://nodejs.org/docs/v5.0.0/api/)
