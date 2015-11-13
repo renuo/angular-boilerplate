@@ -1,0 +1,25 @@
+{
+  "name": "sample-portal",
+  "private": true,
+  "version": "0.0.0",
+  "description": "sample Portal",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "Cyril Kyburz <cyril.kyburz@renuo.ch> (https://www.renuo.ch)",
+    "Josua Schmid <josua.schmid@renuo.ch> (https://www.renuo.ch)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:renuo/sample-portal.git"
+  },
+  "homepage": "https://www.sample.ch",
+  "appPath": "src",
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-bootstrap": "~0.14.3",
+    "jquery": "~2.1.4",
+    "angular-ui-router": "~0.2.15"
+  }
+}

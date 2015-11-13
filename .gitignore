@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+src/assets/bower_components
+src/typings/tsd
+node_modules
+tmp
+*.log
+

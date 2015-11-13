@@ -1,0 +1,9 @@
+scss_files: 'src/app/stylesheets/**/*.css.scss'
+
+linters:
+  BorderZero:
+    enabled: false
+
+  Indentation:
+    severity: warning
+    width: 2

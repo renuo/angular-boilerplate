@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>It's a test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- build:css lib.css -->
+  <!-- <link rel="stylesheet" href="assets/bower_components/examplefile.css"/> -->
+  <!-- endbuild -->
+
+</head>
+
+<body ng-app="samplePortal" ng-strict-di>
+  <noscript>
+    Bitte aktivieren Sie Javascript.
+  </noscript>
+
+  <div ui-view></div>
+
+  <div>
+    Test
+  </div>
+
+  <!-- TODO: move to build:js part -->
+  <script src="assets/bower_components/angular/angular.js"></script>
+  <script src="assets/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+  <script src="app/app.js"></script>
+  <script src="app/routes.js"></script>
+  <script src="app/components/home/services/home_services.js"></script>
+  <script src="app/components/home/home_controller.js"></script>
+
+</body>
+
+<!-- build:js lib.js -->
+<!-- <script src="assets/bower_components/examplefile.js"></script> -->
+<!-- endbuild -->
+
+</html>

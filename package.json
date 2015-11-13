@@ -1,0 +1,52 @@
+{
+  "name": "sample-portal",
+  "homepage": "http://www.sample.ch",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Insurance portal",
+  "main": "src/index.html",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:renuo/sample-portal.git"
+  },
+  "keywords": [
+    "insurance",
+    "portal"
+  ],
+  "author": [
+    "Cyril Kyburz <cyril.kyburz@renuo.ch> (https://www.renuo.ch)",
+    "Josua Schmid <josua.schmid@renuo.ch> (https://www.renuo.ch)"
+  ],
+  "bugs": {
+    "url": "https://jira4sample.atlassian.net/projects/TOP/issues"
+  },
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "analyze": false,
+  "scripts": {
+    "prestart": "npm install",
+    "postinstall": "bower install",
+    "start": "gulp",
+    "pretest": "npm install",
+    "test": "gulp test"
+  },
+  "devDependencies": {
+    "bower": "^1.6.5",
+    "coffee-script": "^1.10.0",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-cli": "^0.3.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-protractor": "^1.0.0",
+    "gulp-sass-lint": "^1.1.0",
+    "gulp-tslint": "^3.6.0",
+    "gulp-typescript": "^2.9.2",
+    "gulp-usemin": "^0.3.15",
+    "gulp-util": "^3.0.7",
+    "npm-shrinkwrap": "^5.4.1",
+    "protractor": "^2.5.1",
+    "tsd": "^0.6.5"
+  }
+}
