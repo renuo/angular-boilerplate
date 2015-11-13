@@ -1,6 +1,6 @@
-# sample Portal
+# Angular Boilerplate
 
-Sample Portal
+Here we provide a boilerplate for angular projects.
 
 # Domains
 
@@ -8,7 +8,9 @@ Live: http://www.sample.ch
 
 ## Prerequisites
 
-This application requires node, for managing we use a [node version manager](https://github.com/creationix/nvm). 
+* [nodejs](https://nodejs.org/docs/v5.0.0/api/)
+* [nvm](https://github.com/creationix/nvm)
+* [jdk](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (if you run selenium locally)
 
 ## Setup Project
 
