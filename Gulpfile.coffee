@@ -6,32 +6,31 @@ gutil = require 'gulp-util'
 ts = require 'gulp-typescript'
 concat = require 'gulp-concat'
 connect = require 'gulp-connect'
-protractor = require('gulp-protractor').protractor;
+protractor = require('gulp-protractor').protractor
 del = require 'del'
 
 paths =
-  src: './src/*'
-  ts: ["./src/app/{,*/}{,*/}*.ts", "!./src/app/{,*/}{,*/}*_spec.ts"]
-  scss: './src/assets/styles/{,*/}*.scss'
+  assets: ['./src/assets/{,*/}{,*/}*', '!./src/assets/bower_components', '!./src/assets/styles']
   dist: './dist/'
-  tmp: './tmp/'
-  index: './src/index.html'
   finalDest: -> if gutil.env.type is 'production' then paths.dist else paths.tmp
+  html: './src/app/{,*/}{,*/}{,*/}*.html'
+  index: './src/index.html'
+  scss: './src/assets/styles/{,*/}*.scss'
+  src: './src/*'
+  tmp: './tmp/'
+  ts: ["./src/app/{,*/}{,*/}*.ts", "!./src/app/{,*/}{,*/}*_spec.ts"]
   tsConfig: require './tsconfig.json'
-  copy:
-    html: './src/app/{,*/}{,*/}{,*/}*.html'
-    assets: ['./src/assets/{,*/}{,*/}*', '!./src/assets/bower_components', '!./src/assets/styles']
 
 gulp.task 'clean', ->
   del [paths.finalDest()]
 
 gulp.task 'copy:html', ->
-  gulp.src paths.copy.html
+  gulp.src paths.html
   .pipe gulp.dest "#{paths.finalDest()}app"
   .pipe connect.reload()
 
 gulp.task 'copy:assets', ->
-  gulp.src paths.copy.assets
+  gulp.src paths.assets
   .pipe gulp.dest "#{paths.finalDest()}assets"
   .pipe connect.reload()
 
