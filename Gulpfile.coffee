@@ -1,6 +1,7 @@
 gulp = require 'gulp'
 usemin = require 'gulp-usemin'
 tslint = require 'gulp-tslint'
+sass = require 'gulp-sass'
 sassLint = require 'gulp-sass-lint'
 gutil = require 'gulp-util'
 ts = require 'gulp-typescript'
@@ -46,6 +47,12 @@ gulp.task 'ts', ->
   .pipe gulp.dest paths.finalDest
   .pipe connect.reload()
 
+gulp.task 'sass', ->
+  gulp.src paths.scss
+  .pipe sass()
+  .pipe gulp.dest paths.finalDest
+  .pipe connect.reload()
+
 gulp.task 'lint:sass', ->
   gulp.src paths.scss
   .pipe sassLint()
@@ -59,7 +66,7 @@ gulp.task 'lint:ts', ->
 gulp.task 'clean', (cb) ->
   del paths.finalDest(), cb
 
-gulp.task 'build', gulp.series 'clean', gulp.parallel 'usemin', 'ts', 'copy'
+gulp.task 'build', gulp.series 'clean', gulp.parallel 'usemin', 'ts', 'sass', 'copy'
 
 gulp.task 'test:e2e', gulp.series 'build', ->
   gulp.src "#{paths.tmp}e2e"
@@ -76,6 +83,7 @@ gulp.task 'connect', gulp.series 'build', (cb) ->
 gulp.task 'watch', ->
   gulp.watch paths.index, gulp.series 'usemin'
   gulp.watch paths.ts, gulp.series 'ts'
+  gulp.watch paths.scss, gulp.series 'sass'
   gulp.watch paths.html, gulp.series 'copy:html'
   gulp.watch paths.assets, gulp.series 'copy:assets'
 
