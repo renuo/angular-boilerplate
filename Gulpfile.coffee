@@ -1,14 +1,14 @@
-gulp = require 'gulp'
-usemin = require 'gulp-usemin'
-tslint = require 'gulp-tslint'
-sass = require 'gulp-sass'
-sassLint = require 'gulp-sass-lint'
-gutil = require 'gulp-util'
-ts = require 'gulp-typescript'
 concat = require 'gulp-concat'
 connect = require 'gulp-connect'
-protractor = require('gulp-protractor').protractor
 del = require 'del'
+gulp = require 'gulp'
+gutil = require 'gulp-util'
+protractor = require('gulp-protractor').protractor
+sass = require 'gulp-sass'
+sassLint = require 'gulp-sass-lint'
+ts = require 'gulp-typescript'
+tslint = require 'gulp-tslint'
+usemin = require 'gulp-usemin'
 
 paths =
   assets: ['./src/assets/{,*/}{,*/}*', '!./src/assets/bower_components', '!./src/assets/styles']
