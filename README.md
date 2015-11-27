@@ -6,16 +6,17 @@ Here we provide a boilerplate for angular projects.
 
 * [nodejs](https://nodejs.org/docs/v5.0.0/api/)
 * [nvm](https://github.com/creationix/nvm)
+* [gulp v4](https://github.com/gulpjs/gulp)
 * [jdk](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (if you run selenium locally)
 
 ## Setup Project
 
 ```
-git clone git@github.com:renuo/sample-portal.git
+git clone git@github.com:renuo/angular-boilerplate.git
 cd sample-portal
 npm install
 tsd install
-echo '127.0.0.1 sample-portal.dev' | sudo tee -a /etc/hosts # for a Consistent Browser History
+echo '127.0.0.1 angular-boilerplate.dev' | sudo tee -a /etc/hosts # for a Consistent Browser History
 ```
 
 ## Type Definitions
