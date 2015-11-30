@@ -1,19 +1,27 @@
+autoprefixer = require 'autoprefixer'
 concat = require 'gulp-concat'
 connect = require 'gulp-connect'
 del = require 'del'
 gulp = require 'gulp'
 gutil = require 'gulp-util'
+minifyCss = require 'gulp-minify-css'
+postcss = require 'gulp-postcss'
 protractor = require('gulp-protractor').protractor
 sass = require 'gulp-sass'
 sassLint = require 'gulp-sass-lint'
 ts = require 'gulp-typescript'
 tslint = require 'gulp-tslint'
+uglify = require 'gulp-uglify'
 usemin = require 'gulp-usemin'
+
+helpers =
+  do: (env, truthy, falsy = gutil.noop()) ->
+    if gutil.env.type is env then truthy else falsy
 
 paths =
   assets: ['./src/assets/{,*/}{,*/}*', '!./src/assets/bower_components', '!./src/assets/styles']
   dist: './dist/'
-  finalDest: -> if gutil.env.type is 'production' then paths.dist else paths.tmp
+  finalDest: -> helpers.do 'production', paths.dist, paths.tmp
   html: './src/app/{,*/}{,*/}{,*/}*.html'
   index: './src/index.html'
   scss: './src/assets/styles/{,*/}*.scss'
@@ -44,12 +52,15 @@ gulp.task 'ts', ->
   gulp.src paths.ts
   .pipe ts paths.tsConfig.compilerOptions
   .pipe concat 'sample.js'
+  .pipe helpers.do 'production', uglify()
   .pipe gulp.dest paths.finalDest
   .pipe connect.reload()
 
 gulp.task 'sass', ->
   gulp.src paths.scss
   .pipe sass()
+  .pipe postcss [autoprefixer(browsers: ['last 2 versions'])]
+  .pipe helpers.do 'production', minifyCss()
   .pipe gulp.dest paths.finalDest
   .pipe connect.reload()
 
