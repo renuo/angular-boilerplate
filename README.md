@@ -14,9 +14,7 @@ Here we provide a boilerplate for angular projects.
 ```
 git clone git@github.com:renuo/angular-boilerplate.git
 cd sample-portal
-npm install
-tsd install
-echo '127.0.0.1 angular-boilerplate.dev' | sudo tee -a /etc/hosts # for a Consistent Browser History
+bin/setup
 ```
 
 ## Type Definitions

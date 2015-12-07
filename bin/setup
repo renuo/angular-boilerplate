@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+npm install
+tsd reinstall --save --overwrite
+echo '127.0.0.1 angular-boilerplate.dev' | sudo tee -a /etc/hosts
