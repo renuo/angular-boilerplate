@@ -3,3 +3,4 @@
 npm install
 tsd reinstall --save --overwrite
 echo '127.0.0.1 angular-boilerplate.dev' | sudo tee -a /etc/hosts
+ln -s ../../bin/check .git/hooks/pre-commit || chmod +x .git/hooks/pre-commit
