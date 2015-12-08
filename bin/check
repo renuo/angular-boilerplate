@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+gulp lint:ts
+RC=$?
+if [ $RC -eq 0 ]; then
+  echo 'TypeScript linting issues detected, commit aborted!'
+  exit 1
+fi
+
+gulp lint:sass
+RC=$?
+if [ $RC -eq 0 ]; then
+  echo 'Sass linting issues detected, commit aborted!'
+  exit 1
+fi
